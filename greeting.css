@@ -1,0 +1,37 @@
+body {
+  background-image: url('bkground.jpg');
+}
+#heading {
+  text-align: center;
+  font-size: 70px;
+  font-style: italic;
+  color:#F7916F;
+  background-color:#8A0C8E;
+}
+h2 {
+  margin-left: 500px;
+}
+h3 {
+  margin-left: 500px;
+}
+h4 {
+  margin-left: 500px;
+}
+#radiobton {
+  margin-left: 500px;
+}
+#gveText {
+  width: 300px;
+  margin-bottom: 50px;
+  margin-left: 450px;
+  margin-top: 50px;
+}
+.output {
+    text-align: center;
+    font-size: 70px;
+    color:#F7916F
+  }
+  #count {
+      text-align: center;
+      margin-top: -70px;
+  }
