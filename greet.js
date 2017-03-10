@@ -13,7 +13,7 @@ var button = document.getElementById('bton');
 var radiobton = document.getElementById('radiobton');
 var textBox = document.getElementById('gveText');
 var demo = document.getElementById('demo');
-var display =document.getElementById('count')
+var display =document.getElementById('countBy')
 
 var lang=' ';
 var count=0;
@@ -29,21 +29,21 @@ lang = e.target.value;
 button.addEventListener("click", function(){
 var input = textBox.value;
 
-if (lang ==="english" && input.length > 0 && namesGreeted[i] === undefined){
+if (lang ==="english" && input.length > 0 && namesGreeted[input] === undefined){
 demo.innerHTML="Hello, " + input;
-namesGreeted[i] = 1;
+namesGreeted[input] = 1;
 count++;
 display.innerHTML = count
 }
-if(lang ==="isiXhosa" && input.length > 0 && namesGreeted[i] === undefined){
+if(lang ==="isiXhosa" && input.length > 0 && namesGreeted[input] === undefined){
 demo.innerHTML="Molo, " + input;
-namesGreeted[i] = 1;
+namesGreeted[input] = 1;
 count++;
 display.innerHTML = count
 }
-if(lang === "afrikaans" && input.length > 0 && namesGreeted[i] === undefined){
+if(lang === "afrikaans" && input.length > 0 && namesGreeted[input] === undefined){
 demo.innerHTML="Halo, " + input;
-namesGreeted[i] = 1;
+namesGreeted[input] = 1;
 count++;
 display.innerHTML = count
 }
@@ -53,13 +53,14 @@ document.getElementById('gveText').value =''
 
 });
 
-var count=localStorage.getItem('count');
-document.getElementById("count").innerHTML = count;
+//var count=localStorage.getItem('countBy');
+document.getElementById("countBy").innerHTML = count;
 
-function resetBtn(){
-  var resetbto=document.getElementById('count');
-  if(resetbto >= 0){
-    document.getElementById('count').innerHTML = count = 0;
-  }
-  localStorage.clear();
+function resetBtn() {
+    'use strict';
+    var rst = document.getElementById('count');
+    if (rst >= 0) {
+        document.getElementById('countBy').innerHTML = count = 0;
+    }
+    localStorage.clear();
 }
