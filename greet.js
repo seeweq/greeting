@@ -31,19 +31,37 @@ var input = textBox.value;
 
 if (lang ==="english" && input.length > 0 && namesGreeted[input] === undefined){
 demo.innerHTML="Hello, " + input;
-namesGreeted[input] = 1;
+namesGreeted[input] = 0;
 count++;
 display.innerHTML = count
 }
-if(lang ==="isiXhosa" && input.length > 0 && namesGreeted[input] === undefined){
+else if(lang ==="isiXhosa" && input.length > 0 && namesGreeted[input] === undefined){
 demo.innerHTML="Molo, " + input;
-namesGreeted[input] = 1;
+namesGreeted[input] = 0;
 count++;
 display.innerHTML = count
 }
-if(lang === "afrikaans" && input.length > 0 && namesGreeted[input] === undefined){
+else if(lang === "afrikaans" && input.length > 0 && namesGreeted[input] === undefined){
 demo.innerHTML="Halo, " + input;
-namesGreeted[input] = 1;
+namesGreeted[input] = 0;
+count++;
+display.innerHTML = count
+}
+else if (lang ==="english" && input.length > 0 && namesGreeted[input] !== undefined){
+demo.innerHTML="Hello, " + input;
+namesGreeted[input] = 0;
+count++;
+display.innerHTML = count
+}
+else if(lang ==="isiXhosa" && input.length > 0 && namesGreeted[input] !== undefined){
+demo.innerHTML="Molo, " + input;
+namesGreeted[input] = 0;
+count++;
+display.innerHTML = count
+}
+else if(lang === "afrikaans" && input.length > 0 && namesGreeted[input] !== undefined){
+demo.innerHTML="Halo, " + input;
+namesGreeted[input] = 0;
 count++;
 display.innerHTML = count
 }
