@@ -10,8 +10,8 @@ function myfunction(){
 
 }*/
 var button = document.getElementById('bton');
-var radiobton = document.getElementById('radiobton');
-var textBox = document.getElementById('gveText');
+//var radiobton = document.getElementById('radiobton');
+var textBox = document.getElementById('getText');
 var demo = document.getElementById('demo');
 var display =document.getElementById('countBy')
 
@@ -65,9 +65,11 @@ namesGreeted[input] = 0;
 count++;
 display.innerHTML = count
 }
+
+
 localStorage.setItem('count', count);
 //window.alert(localStorage.count);
-document.getElementById('gveText').value =''
+document.getElementById('getText').value =''
 
 });
 

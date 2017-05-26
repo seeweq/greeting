@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <div id="mocha"></div>
+   <script>
+      mocha.setup('bdd');
+      var assert = chai.assert;
+   </script>
+
+
+
+
+
+
+
+   <script src="greetingNames.js"></script>
+   <script src="test/greetingNames.test.js"></script>
+   <script src="counterFile.js"></script>
+   <script src="test/counterFile.test.js"></script>
+   <script>
+  mocha.checkLeaks();
+  mocha.globals(['jQuery']);
+  mocha.run();
+</script>
+  </body>
+</html>
