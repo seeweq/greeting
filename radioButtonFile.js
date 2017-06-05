@@ -12,4 +12,7 @@ function radio() {
   } else if (document.getElementById('afrikaans').checked === true) {
     return 'afrikaans'
   }
+  else {
+    return 'none';
+  }
 }

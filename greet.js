@@ -64,7 +64,7 @@ function myfunction(){
 // namesGreeted[input] = 0;
 // count++;
 // display.innerHTML = count
-}
+//}
 
 
 //localStorage.setItem('count', count);

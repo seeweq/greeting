@@ -1,28 +1,57 @@
-var textBox = document.getElementById('getText');
+var firstNameTextbox = document.getElementById('getText');
 var demo = document.getElementById('demo');
 var language = document.getElementsByName('language');
 var button = document.getElementById('bton');
-var display =document.getElementById('countBy');
+var counterElem = document.getElementById('countBy');
+var clearBton = document.getElementById('resetbton');
 
-var myCounter = new MyCounter();
+//Setup a counter Factory Function instance from values in localStorage.
+function setupCounterFromLocalStorage(){
+  return MyCounter(JSON.parse(localStorage['allNames']));
+}
 
-button.addEventListener("click", function(){
-  var storageVal= localStorage['count'];
-  var firstName = textBox.value
-  var radioButton = radio();
-  demo.innerHTML = greetAnyName(firstName, radioButton);
-  var countingNamesGreeted = myCounter.manageName(firstName);
-  var total = myCounter.howManyGreeted();
-  var storageCounter =  parseInt(storageVal) + 1;
+function storeNamesToLocalStorage(names){
+  localStorage['allNames'] = JSON.stringify(names);
+}
 
-  if(textBox.value.trim() < 1){
-    alert ('PLEASE FILL IN EMPTY SPACES!');
+function showCounter(counterValue){
+  counterElem.innerHTML = counterValue;
+}
+
+var myCounter = setupCounterFromLocalStorage();
+
+button.addEventListener("click", function() {
+   var storageVal = localStorage['count'];
+   var firstName = firstNameTextbox.value
+   var radioButton = radio();
+
+  if (firstNameTextbox.value.trim() < 1) {
+    alert('PLEASE FILL IN EMPTY SPACES!');
     return;
   }
+  if (radioButton !== 'none') {
+    demo.innerHTML = greetAnyName(firstName, radioButton);
+    var countingNamesGreeted = myCounter.manageName(firstName);
+  }
 
-  document.getElementById('getText').value =''
 
-  localStorage.setItem('count', storageCounter);
-  display.innerHTML = storageCounter;
+   showCounter(myCounter.howManyGreeted());
+   storeNamesToLocalStorage(myCounter.allNames());
+
+
+
+    firstNameTextbox.value = ''
+
+ });
+
+
+
+clearBton.addEventListener("click", function(){
+
+  myCounter.clear();
+  firstNameTextbox.value = '';
+  showCounter(myCounter.howManyGreeted());
+  storeNamesToLocalStorage(myCounter.allNames());
 });
-var total = localStorage.getItem('countBy');
+
+showCounter(myCounter.howManyGreeted());
